@@ -33,17 +33,17 @@ Topic   : How improve performace of neural network in deep-learning (DL)
    - Deep Learning use represtiontation learning
      
      Represiontation learning : Representation learning is a subset of machine learning that focuses on automatically learning meaningful representations of data, often through the use of neural networks. In the context of deep learning 
-                                                                                                                                    refrance : Chat GPT
+                                                                                                                                         refrance : Chat GPT
                                                                
                                        or
      In simple terms, representation learning means that a neural network automatically identifies and extracts primitive features from the data. This process is called representation learning.
      
      Example: In the case of face recognition, the initial hidden layers of a neural network identify primitive features like edges and lines. Using these features, the subsequent layers detect more complex features like the nose, eyes, and so on.
-                                                                                                                             - By Rupesh garsondiya
+                                                                                                                                        - By Rupesh garsondiya
      
      Transfer learning : Transfer learning is a machine learning technique where a model trained on one task is reused or fine-tuned for a different but related task. 
                                                               
-                                                                                                                               Refrance  : chat GPT
+                                                                                                                                        Refrance  : chat GPT
     
   2> No of node in layer 
   
