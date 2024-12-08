@@ -1,0 +1,113 @@
+Name    : Rupesh Garsondiya
+github  : @Rupeshgarsondiya
+Topic   : How improve performace of neural network in deep-learning (DL)
+
+1> solveing problem
+  - Vanishing gradient problem / Exploding gradient problem
+  - Not enough data
+  - slow training
+  - Overfiting
+  
+  
+ 2> Hyperparameter tuning
+   
+   1> Hyperparameter list
+     
+     - Hidden layer
+     - No fo neuron in layer
+     - Learning rate
+     - Optimizer
+     - Batch size
+     - Activation function
+ 
+ 
+# Let's start understanding the problem one by one and discuss its solution.
+
+1> Hyperparametr tuning
+
+  1> No of hidden layers
+   
+   -There is no specific technique to determine the number of hidden layers.
+   -However, one point to remember is that if our model faces an overfitting problem, we should stop adding more hidden layers.
+   
+   - Deep Learning use represtiontation learning
+     
+     Represiontation learning : Representation learning is a subset of machine learning that focuses on automatically learning meaningful representations of data, often through the use of neural networks. In the context of deep learning 
+                                                                                                                                       
+                                                                                                                                         refrance : Chat GPT
+                                                               
+                                       or
+     In simple terms, representation learning means that a neural network automatically identifies and extracts primitive features from the data. This process is called representation learning.
+     
+     Example: In the case of face recognition, the initial hidden layers of a neural network identify primitive features like edges and lines. Using these features, the subsequent layers detect more complex features like the nose, eyes, and so on.
+                                                                                                                                        
+                                                                                                                                        - By Rupesh garsondiya
+     
+     Transfer learning : Transfer learning is a machine learning technique where a model trained on one task is reused or fine-tuned for a different but related task. 
+                                                              
+                                                                                                                                         Refrance : chat GPT
+    
+  2> No of node in layer 
+  
+    - In input layer total no of node are total no of input
+    - For the hidden layers, there is no specific rule, but in the past, some people have suggested following a pyramid structure. (If we do not follow this, the result will not change.)
+    - A common starting point is to set the number of neurons in the hidden layer somewhere between the size of the input layer and the output layer.
+             H = sqrt(no of input neuron)
+             Where H is number of neuron in hidden layer
+    - One option is always present: trial and error.
+    
+  3> Batch size
+   
+     - there are two type of group some who use small or some who use large batch size
+     
+     - Let's discuss both
+       
+       1> Small batch size
+         - Advantages
+           - memory effficient
+           - It's good to converge
+         - Disadvantge
+           - slow training
+       2> Large batch size
+         - Advantage
+           - training faster 
+             
+      - Use learning rate scheduler : A learning rate scheduler is a method to adjust the learning rate during the training process of a neural network. By changing the learning rate at different stages of training, the scheduler helps to optimize the learning process, potentially improving convergence, stability, and final model performance.
+                        
+      - Learning rate warm-up helps stabilize the training process by gradually increasing the learning rate during the initial stages of training. It can be crucial for models with large architectures, when using adaptive optimizers, or when training with large batch sizes. The warm-up phase can prevent early instability and improve convergence in deep learning models.
+
+  3> Epochs
+    
+    - when our model faces the overfiting then stop no more need to train model
+    - In Keras, we can perform this task using a callback function. When there is no change in loss or if the loss increases, Keras automatically stops training. This is called early stopping.
+    Ex :    keras.callbacks.EarlyStopping(
+              monitor="val_loss",  # Early stopping is decided based on which quantity?
+              min_delta=0,
+              patience=0,    #  How many epochs do you wait for no change in loss or accuracy? For example, if you set it to 2, it will wait for 2                             epochs for a change. If there is no change in the quantity after 2 epochs, it will stop training.
+              verbose=0,     # 0 means not to see the training massage, and 1 means to see the training massage.
+              mode="auto",   # There are three types of modes: 1. Auto, 2. Min, 3. Max. In 'min', the training stops when the monitored value decreases. In 'max', the training stops when the monitored value increases. 'Auto' allows Keras to detect the mode automatically. Sometimes, you may need to explicitly specify the mode type.
+              baseline=None,
+              restore_best_weights=False,    # Store the best value of weights (when the accuracy is high, store the weights and biases of that step).
+              start_from_epoch=0,          #Number of epochs to wait before starting to monitor improvement. This allows for a warm-up period in                                         which no improvement is expected and thus training will not be stopped. Defaults to 0.
+              )
+              
+              
+              
+  4> learning rate 
+  5> optimizer
+  6> Activation function 
+  
+  I will add these three hyperparameters in the future. 
+                                                                             
+                                                                                                                                         - Rupesh Garsondiya
+  
+
+   
+
+     
+     
+     
+     
+     
+                          
+
